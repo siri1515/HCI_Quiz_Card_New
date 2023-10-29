@@ -1,0 +1,94 @@
+.modal_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+.popup_form {
+    background-color: #FFE5EC;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    width: 60%;
+    max-width: 90%;
+    height: 40%;
+    max-height: 90%;
+}
+
+.h1{
+    display: grid;
+    place-items: center;
+}
+  
+.cardset_form {
+    background-color: white;
+    margin-top: 20px;
+    z-index: 2;
+    position: fixed;
+    width: 40%;
+    height: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}
+  
+.cardset_form label {
+    display: block;
+    margin-bottom: 10px;
+}
+  
+.cardset_form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cardset_form button {
+    align-items: center;
+    margin-right: 20px;
+    background-color: #FFE7E7;
+    background-position: 0 0;
+    border: 1px solid #FEE0E0;
+    border-radius: 11px;
+    box-sizing: border-box;
+    color: #F97068;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 33px;
+    list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+    padding: 2px 12px;
+    text-underline-offset: 1px;
+    transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+}
+
+
+.cardset_form button:active {
+    background-color: #D33A2C;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+    color: #FFFFFF;
+}
+
+.cardset_form button:hover {
+    background-color: #FFE3E3;
+    border-color: #FAA4A4;
+}
+
+  
+.cardset_form button.submit {
+    background-color: #3498db;
+}
