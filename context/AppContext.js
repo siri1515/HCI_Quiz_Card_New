@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, use, useContext, useState } from 'react';
 
 const AppContext = createContext();
 const data = [
@@ -49,9 +49,10 @@ export const AppProvider = ({ children }) => {
   const [list, setList] = useState(data);
   const [chosenSetIndex, setChosenSetIndex] = useState(-1);
   const [chosenSet, setChosenSet] = useState('');
+  const [aiCardSet, setAICardset] = useState([]);
 
   return (
-    <AppContext.Provider value={{ list, setList, chosenSetIndex, setChosenSetIndex,  chosenSet, setChosenSet }}>
+    <AppContext.Provider value={{ list, setList, chosenSetIndex, setChosenSetIndex,  chosenSet, setChosenSet, aiCardSet, setAICardset }}>
       {children}
     </AppContext.Provider>
   );

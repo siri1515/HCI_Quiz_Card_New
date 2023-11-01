@@ -27,14 +27,30 @@ export default async function (req, res) {
   try {
     const chatCompletion = await openai.chat.completions.create({
       messages: [
-                  { role: "system", content: "you need to create a question and the corresponding answer according to the lerning resources users provided. you need return question and answer in form of [<question>, <answer>] which inside a ``` code block."},
-                  { role: "user", content: info }
+                  { role: "system", content: "You need to create 3 questions and their corresponding answers based on the learning resources provided by the user. Please ensure each question and answer is wrapped in double quotes, separated by a comma. The entire pair should be enclosed in single quotes, formatted as: '['<question>', '<answer>']'. Ensure answers are kept simple and straightforward."},
+                  { role: "user", content: info+"You need to create 3 questions and their corresponding answers based on the learning resources provided by the user. Please ensure each question and answer is wrapped in double quotes, separated by a comma. The entire pair should be enclosed in single quotes, formatted as: '['<question>', '<answer>']'. Ensure answers are kept simple and straightforward." }
                 ],
       model: "gpt-4",
-  });
-    res.status(200).json({ result: chatCompletion.choices[0].message.content });
+    });
+    console.log("chatgpt: ", chatCompletion.choices[0].message.content)
+    const matches = chatCompletion.choices[0].message.content.match(/\[.*?\]/g);
+    let questionsAndAnswers = [];
+    console.log("match: ", matches);
+    if (matches) {
+      matches.forEach(item => {
+          const parsedArray = JSON.parse(item.replace(/`/g, '"')); //replace either ` or ' to ""
+          console.log("parsedArray: ", parsedArray);
+          questionsAndAnswers.push({
+              id: Math.random().toString(),
+              question: parsedArray[0],
+              answer: parsedArray[1]
+          });
+          console.log("array: ", questionsAndAnswers);
+      });
+    }
+
+    res.status(200).json({ result: questionsAndAnswers });
   } catch(error) {
-    // Consider adjusting the error handling logic for your use case
     if (error.response) {
       console.error(error.response.status, error.response.data);
       res.status(error.response.status).json(error.response.data);
