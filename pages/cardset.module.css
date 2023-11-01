@@ -1,4 +1,4 @@
-.body {
+/* .body {
   background-color: beige;
   font-family: 'Arial', sans-serif;
 }
@@ -76,4 +76,53 @@
 .add_card_set_button:hover {
   background-color: #0056b3;
   transform: translateY(-3px);
+}
+
+
+/* ******************** NEW CODES ******************** */
+
+.body {
+  background-color: beige; /* Sets the whole page background to beige */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
+  min-height: 100vh; /* Full height of the viewport */
+  padding: 20px; /* Add some padding around */
+}
+
+.page_title {
+  text-align: center; /* Centers the "Quiz Card Maker" title */
+  margin: 20px 0; /* Add space above and below the title */
+}
+
+.card_set_page {
+  width: 100%; /* Ensures the container takes the full width of its parent */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the card sets horizontally */
+  gap: 20px; /* Adds space between the card sets */
+}
+
+.card_set_item {
+  background-color: pink; /* Sets the card set background to pink */
+  color: white; /* Sets the text color inside the card set to white */
+  padding: 10px; /* Adds padding inside each card set for spacing */
+  border-radius: 5px; /* Rounds the corners of the card set items */
+  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+  text-align: center; /* Centers the text inside the card set item */
+  display: flex;
+  align-items: center; /* Centers children vertically */
+  justify-content: center; /* Centers children horizontally */
+}
+
+.delete_button {
+  background-color: #ff4d4d; /* Red background for delete button */
+  color: white; /* White text for the delete button */
+  border: none; /* Removes border */
+  padding: 5px 10px; /* Padding inside the button */
+  margin-top: 10px; /* Space above the delete button */
+  border-radius: 3px; /* Slightly rounded corners for the button */
+  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+  outline: none; /* Removes outline */
 }
