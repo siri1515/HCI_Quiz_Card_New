@@ -33,7 +33,7 @@ export default function CardPage(props){
         router.replace('/cardset');
     }
 
-    if (chosenSet.cards.length > 0){
+    if (chosenSet?.cards?.length > 0){
         return(
             <Fragment>
                 <nav className={styles.navbar}>
