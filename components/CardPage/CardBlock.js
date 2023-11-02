@@ -21,10 +21,6 @@ export default function CardBlock(props) {
     function nextClickHandler() {
         setIndex(index + 1);
     }
-
-    // function cardClickHandler() {
-    //     setSide(!side);
-    // }
     
     function cardClickHandler() {
         setSide(!side);
@@ -33,7 +29,7 @@ export default function CardBlock(props) {
     
         setTimeout(() => {
             setIsFlipping(false);
-        }, 400);
+        }, 100);
     }
 
     function updateButtonStates() {
