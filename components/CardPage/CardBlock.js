@@ -25,7 +25,7 @@ export default function CardBlock(props) {
     // function cardClickHandler() {
     //     setSide(!side);
     // }
-
+    
     function cardClickHandler() {
         setSide(!side);
         setIsFlipping(true);
@@ -111,9 +111,6 @@ export default function CardBlock(props) {
                         {chosenSet.cards[index].answer}
                     </div>
                 </div>
-
-
-
 
                 <div className={styles.button_block}>
                     <button onClick={prevClickHandler} disabled={prevDisabled}>Previous</button>

@@ -87,3 +87,25 @@
 .hidden {
     display: none;
 }
+
+
+
+.edit_buttons {
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.edit_buttons:hover {
+    background-color: navy;
+}
+
+.buttons_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
