@@ -16,17 +16,17 @@ export default function CardSetPage(props){
     return(
         <div className={styles.body}>
             <NavBar />
-            <h1 className="page_title">Quiz Card Maker</h1> {/* Add the title */}
+            <h1 className={styles.page_title}>Quiz Card Maker</h1> {/* Add the title */}
             <AddNewCardSet />
-            <div className="card_set_page">
+            <div className={styles.card_set_page}>
                 {list.map((cardset) => {
                     return(
-                        <div key={cardset.id} className="card_set_item">
+                        <div key={cardset.id} className={styles.card_set_item}>
                             <CardSetItem 
                                 title={cardset.title} 
                                 id={cardset.id} 
                             />
-                          {/* <button className="delete_button" onClick={() => deleteHandler(cardset.id)}>Delete</button> */}
+                          {/* <button className={styles.delete_button} onClick={() => deleteHandler(cardset.id)}>Delete</button> */}
                         </div>
                     )
                 })}

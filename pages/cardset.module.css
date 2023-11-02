@@ -56,10 +56,10 @@
 
 .delete_button:hover {
   background-color: #c82333;
-}
+} */
 
 /* Styles for the Add New Card Set Button */
-.add_card_set_button {
+/* .add_card_set_button {
   display: block;
   margin: 20px auto; 
   background-color: #007bff;
@@ -76,53 +76,97 @@
 .add_card_set_button:hover {
   background-color: #0056b3;
   transform: translateY(-3px);
-}
+} */
 
 
 /* ******************** NEW CODES ******************** */
 
 .body {
-  background-color: beige; /* Sets the whole page background to beige */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers children horizontally */
-  justify-content: center; /* Centers children vertically */
-  min-height: 100vh; /* Full height of the viewport */
-  padding: 20px; /* Add some padding around */
+  background-color: beige; /* Whole page background color set to beige */
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
 }
 
 .page_title {
-  text-align: center; /* Centers the "Quiz Card Maker" title */
-  margin: 20px 0; /* Add space above and below the title */
+  text-align: center; /* Title is centered on the page */
+  font-size: 2.5em; 
+  margin-bottom: 30px;
+  color: #004da0; 
 }
 
 .card_set_page {
-  width: 100%; /* Ensures the container takes the full width of its parent */
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centers the card sets horizontally */
-  gap: 20px; /* Adds space between the card sets */
+  justify-content: center; /* Centers card sets horizontally */
+  align-items: center; /* Centers card sets vertically */
+  margin-top: 20px;
+  width: 100%; /* Full width to center content */
 }
 
-.card_set_item {
-  background-color: pink; /* Sets the card set background to pink */
-  color: white; /* Sets the text color inside the card set to white */
-  padding: 10px; /* Adds padding inside each card set for spacing */
-  border-radius: 5px; /* Rounds the corners of the card set items */
-  cursor: pointer; /* Changes the cursor to indicate it's clickable */
-  text-align: center; /* Centers the text inside the card set item */
+/* .card_set_item {
+  background-color: pink;
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+  position: relative;
   display: flex;
-  align-items: center; /* Centers children vertically */
-  justify-content: center; /* Centers children horizontally */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+.card_set_item:hover {
+  background-color: #0056b3;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card_set_item h3 {
+  margin: 0;
+  margin-bottom: 10px;
+} */
+
 
 .delete_button {
-  background-color: #ff4d4d; /* Red background for delete button */
-  color: white; /* White text for the delete button */
-  border: none; /* Removes border */
-  padding: 5px 10px; /* Padding inside the button */
-  margin-top: 10px; /* Space above the delete button */
-  border-radius: 3px; /* Slightly rounded corners for the button */
-  cursor: pointer; /* Changes the cursor to indicate it's clickable */
-  outline: none; /* Removes outline */
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 16px; 
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute; 
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+
+.delete_button:hover {
+  background-color: #c82333;
+}
+
+/* Styles for the Add New Card Set Button */
+.add_card_set_button {
+  display: block;
+  margin: 20px auto; 
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px; 
+  border-radius: 8px;
+  font-size: 1.1em; 
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); 
+  transition: background-color 0.2s;
+}
+
+.add_card_set_button:hover {
+  background-color: #0056b3;
 }
