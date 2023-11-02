@@ -4,6 +4,8 @@ import styles from './quizcard.module.css';
 import { useAppContext } from '../context/AppContext';
 import AddNewButton from "../components/CardPage/AddNewButton";
 import { useRouter } from 'next/router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function CardPage(props){
     const router = useRouter();
@@ -37,7 +39,9 @@ export default function CardPage(props){
         return(
             <Fragment>
                 <nav className={styles.navbar}>
-                    <div className={styles.back} onClick={backClickHandler}>back</div>
+                    <div className={styles.back} onClick={backClickHandler}>
+                        <FontAwesomeIcon size="2x" icon={faArrowLeft} />
+                    </div>
                     <div className={styles.title}>{chosenSet.title}</div>
                     <button className={styles.edit_mode_button} onClick={editClickHandler}>
                         {modeState + ' Edit Mode'}

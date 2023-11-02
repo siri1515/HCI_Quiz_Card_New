@@ -3,6 +3,9 @@ import styles from './CardBlock.module.css';
 import EditButton from "./EditButton";
 import AddNewButton from "./AddNewButton";
 import { useAppContext } from '../../context/AppContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function CardBlock(props) {
 
@@ -109,13 +112,17 @@ export default function CardBlock(props) {
                 </div>
 
                 <div className={styles.button_block}>
-                    <button onClick={prevClickHandler} disabled={prevDisabled}>Previous</button>
+                    <button className={styles.circleButton} onClick={prevClickHandler} disabled={prevDisabled}>
+                        <FontAwesomeIcon className={styles.arrowIcon} size="2x" icon={faArrowLeft} />
+                    </button>
                     <div className={styles.index_block}>
                         <div>{index + 1}</div>
                         <div>{'/'}</div>
                         <div>{chosenSet.cards.length}</div>
                     </div>
-                    <button onClick={nextClickHandler} disabled={nextDisabled}>Next</button>
+                    <button className={styles.circleButton} onClick={nextClickHandler} disabled={nextDisabled}>
+                        <FontAwesomeIcon className={styles.arrowIcon} size="2x" icon={faArrowRight} />
+                    </button>
                 </div>
             </div>
         </div>
