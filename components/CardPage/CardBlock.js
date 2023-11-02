@@ -12,6 +12,7 @@ export default function CardBlock(props) {
     const [side, setSide] = useState(true);  // true is front, false is back
     const [isFlipping, setIsFlipping] = useState(false);
     const { list, setList, chosenSet, setChosenSet } = useAppContext();
+    const [flipDirection, setFlipDirection] = useState(1); // 1 for normal, -1 for reverse
 
     function prevClickHandler() {
         setIndex(index - 1);
@@ -21,8 +22,18 @@ export default function CardBlock(props) {
         setIndex(index + 1);
     }
 
+    // function cardClickHandler() {
+    //     setSide(!side);
+    // }
+    
     function cardClickHandler() {
         setSide(!side);
+        setIsFlipping(true);
+        setFlipDirection(flipDirection * -1); // This will change the direction of the flip
+    
+        setTimeout(() => {
+            setIsFlipping(false);
+        }, 400);
     }
 
     function updateButtonStates() {
@@ -77,7 +88,9 @@ export default function CardBlock(props) {
                     {side ? props.list[index].question : props.list[index].answer}
                 </div> */}
 
-                <div className={`${styles.card} ${!side ? styles.flipping : ''}`} onClick={cardClickHandler}>
+
+
+                {/* <div className={`${styles.card} ${!side ? styles.flipping : ''}`} onClick={cardClickHandler}>
 
                     <div className={`${styles.card_content} ${styles.card_front}`}>
                         {chosenSet.cards[index].question}
@@ -85,8 +98,19 @@ export default function CardBlock(props) {
                     <div className={`${styles.card_content} ${styles.card_back}`}>
                         {chosenSet.cards[index].answer}
                     </div>
-                </div>
+                </div> */}
 
+
+
+                <div className={`${styles.card} ${isFlipping ? styles.flipping : ''}`} onClick={cardClickHandler}>
+                    {/* Always render both the question and answer, but only display the side that is currently active */}
+                    <div className={`${styles.card_content} ${styles.card_front} ${!side && styles.hidden}`}>
+                        {chosenSet.cards[index].question}
+                    </div>
+                    <div className={`${styles.card_content} ${styles.card_back} ${side && styles.hidden}`}>
+                        {chosenSet.cards[index].answer}
+                    </div>
+                </div>
 
                 <div className={styles.button_block}>
                     <button onClick={prevClickHandler} disabled={prevDisabled}>Previous</button>
