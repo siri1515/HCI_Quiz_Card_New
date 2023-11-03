@@ -78,10 +78,10 @@ export default function CardBlock(props) {
                 {
                     props.editState === true ? 
                     (
-                        <div>
+                        <div className={styles.edit_mode_button_block}>
                             <AddNewButton index={index} />
                             <EditButton index={index} />
-                            <button onClick={deleteHandler}>Delete</button>
+                            <button className={styles.delete_card_button} onClick={deleteHandler}>Delete</button>
                         </div>
                     ) : ''
                 }
