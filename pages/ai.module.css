@@ -1,3 +1,8 @@
+.body {
+  background-color: beige; /* Whole page background color set to beige */
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+}
 
   .main,
   .main input {

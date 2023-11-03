@@ -1,4 +1,4 @@
-import { React, Fragment, useState } from "react";
+import { React, useState } from "react";
 import CardBlock from "../components/CardPage/CardBlock";
 import styles from './quizcard.module.css';
 import { useAppContext } from '../context/AppContext';
@@ -37,10 +37,10 @@ export default function CardPage(props){
 
     if (chosenSet?.cards?.length > 0){
         return(
-            <Fragment>
+            <div className={styles.body}>
                 <nav className={styles.navbar}>
                     <div className={styles.back} onClick={backClickHandler}>
-                        <FontAwesomeIcon size="2x" icon={faArrowLeft} />
+                        <FontAwesomeIcon className={styles.arrowIcon} size="2x" icon={faArrowLeft} />
                     </div>
                     <div className={styles.title}>{chosenSet.title}</div>
                     <button className={styles.edit_mode_button} onClick={editClickHandler}>
@@ -51,17 +51,17 @@ export default function CardPage(props){
                     editState={editMode} 
                     onSaveDeletedIndex={indexDeleteHandler} 
                 />
-            </Fragment>
+            </div>
         )
     }
     else{
         return(
-            <Fragment>
+            <div className={styles.centeredContent}>
                 <h1>
-                    there's no card yet, let's add your cards!
+                    <b>There's no card yet, Let's add your cards!</b>
                 </h1>
                 <AddNewButton index={0}/>
-            </Fragment>
+            </div>
         )
     }
 }

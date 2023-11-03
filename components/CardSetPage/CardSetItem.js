@@ -8,6 +8,10 @@ export default function CardSetItem(props){
     const { list, setList, chosenSetIndex, setChosenSetIndex, chosenSet, setChosenSet } = useAppContext();
     const router = useRouter();
 
+    function deleteHandler(cardsetID){
+        setList(list.filter(cardset => cardset.id !== cardsetID));
+    }
+
     function cardSetClickHandler(){
         console.log("setid", props.id);
         console.log("chosenbefore", chosenSet);
@@ -27,8 +31,11 @@ export default function CardSetItem(props){
     }, [chosenSet]);
 
     return(
-        <div className={styles.card_set_item} onClick={cardSetClickHandler}>
-            {props.title}
+        <div className={styles.parent_container}>
+            <div className={styles.card_set_item} onClick={cardSetClickHandler}>
+                {props.title}
+            </div>
+            <button className={styles.delete_button} onClick={() => deleteHandler(props.id)}>Delete</button>
         </div>
     )
 }

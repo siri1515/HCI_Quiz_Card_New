@@ -6,17 +6,13 @@ import styles from './cardset.module.css';
 import { useAppContext } from '../context/AppContext';
 
 
-export default function CardSetPage(props){
+export default function CardSetPage(){
     const { list, setList } = useAppContext();
-
-    function deleteHandler(cardsetID){
-        props.onSaveDeletedID(cardsetID);
-    }
 
     return(
         <div className={styles.body}>
             <NavBar />
-            <h1 className={styles.page_title}>Quiz Card Maker</h1> {/* Add the title */}
+            <h1 className={styles.page_title}>CardSet List</h1> {/* Add the title */}
             <AddNewCardSet />
             <div className={styles.card_set_page}>
                 {list.map((cardset) => {
@@ -26,7 +22,6 @@ export default function CardSetPage(props){
                                 title={cardset.title} 
                                 id={cardset.id} 
                             />
-                          {/* <button className={styles.delete_button} onClick={() => deleteHandler(cardset.id)}>Delete</button> */}
                         </div>
                     )
                 })}
