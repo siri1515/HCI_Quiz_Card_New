@@ -22,6 +22,7 @@
 }
 
 .edit_mode_button {
+  border-radius: 10px;
   background-color: #007bff;
   color: #fff;
   border: none; 

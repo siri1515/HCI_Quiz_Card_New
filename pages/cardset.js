@@ -6,12 +6,8 @@ import styles from './cardset.module.css';
 import { useAppContext } from '../context/AppContext';
 
 
-export default function CardSetPage(props){
+export default function CardSetPage(){
     const { list, setList } = useAppContext();
-
-    function deleteHandler(cardsetID){
-        props.onSaveDeletedID(cardsetID);
-    }
 
     return(
         <div className={styles.body}>
@@ -26,7 +22,6 @@ export default function CardSetPage(props){
                                 title={cardset.title} 
                                 id={cardset.id} 
                             />
-                          {/* <button className={styles.delete_button} onClick={() => deleteHandler(cardset.id)}>Delete</button> */}
                         </div>
                     )
                 })}

@@ -50,7 +50,7 @@ export default function AI() {
   }
 
   return (
-    <div>
+    <div className={styles.body}>
       <NavBar />
       <main className={styles.main}>
         <h3>Let me create cardsets for you!</h3>

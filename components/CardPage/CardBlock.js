@@ -18,10 +18,12 @@ export default function CardBlock(props) {
     const [flipDirection, setFlipDirection] = useState(1); // 1 for normal, -1 for reverse
 
     function prevClickHandler() {
+        setSide(true);
         setIndex(index - 1);
     }
 
     function nextClickHandler() {
+        setSide(true);
         setIndex(index + 1);
     }
     
