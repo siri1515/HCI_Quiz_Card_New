@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import NavBar from "../components/Common/NavBar";
-import styles from "../components/CardPage/about.module.css"; 
+import styles from "./about.module.css"; 
 
 export default function About() {
 
@@ -30,7 +30,7 @@ export default function About() {
     <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2022/01/104228210.jpg?auto=format&q=60&fit=max&w=930" alt="personalize" className={styles.center} /> 
     <div className={styles.columnContainer2}>
       <h3 className={styles.text3}>You can organize, edit and create new card sets</h3>
-      <div className={styles.button1}>
+      <div className={styles.button_div}>
       <Link href="/cardset" className={pathname === '/cardset' ? styles.link_disabled : styles.link}>
       <button className={styles.button1}> Try it </button>
       </Link>
@@ -41,7 +41,7 @@ export default function About() {
     <div className={styles.container3}> 
     <div className={styles.columnContainer3}>
       <h3 className={styles.text4}>You can generate new flashcards in one click with the power of AI</h3>
-      <div className={styles.button1}>
+      <div>
       <Link href="/ai" className={pathname === '/ai' ? styles.link_disabled : styles.link}>
       <button className={styles.button1}> Try it </button>
       </Link>

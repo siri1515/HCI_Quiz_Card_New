@@ -1,0 +1,110 @@
+.edit_card_button{
+    background-color: #FF8FAB;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 10px;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.edit_card_button:hover{
+    background-color: #FB6F92;
+}
+
+/* form style */
+.modal_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+.popup_form {
+    background-color: #FFE5EC;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    width: 60%;
+    max-width: 90%;
+    height: 40%;
+    max-height: 90%;
+}
+  
+.edit_card_form {
+    background-color: white;
+    margin-top: 20px;
+    z-index: 2;
+    position: fixed;
+    width: 40%;
+    height: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}
+  
+.edit_card_form label {
+    display: block;
+    margin-bottom: 10px;
+}
+  
+.edit_card_form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.edit_card_form button {
+    align-items: center;
+    margin-right: 20px;
+    background-color: #FFE7E7;
+    background-position: 0 0;
+    border: 1px solid #FEE0E0;
+    border-radius: 11px;
+    box-sizing: border-box;
+    color: #F97068;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 33px;
+    list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+    padding: 2px 12px;
+    text-underline-offset: 1px;
+    transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+}
+
+
+.edit_card_form button:hover {
+    background-color: #FFE3E3;
+    border-color: #FAA4A4;
+}

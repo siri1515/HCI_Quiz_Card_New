@@ -54,9 +54,7 @@
     flex-direction: row;
     align-items: stretch;
     min-height: 25vh;
-    border-radius: 30px;
-    
-  
+    border-radius: 30px; 
   }
 
   .columnContainer3 {
@@ -118,6 +116,10 @@
   }
 
   
+  .button_div{
+    text-align: center;
+    align-self: center;
+  }
   
   .button1 {
     background-color: aqua;
@@ -131,6 +133,10 @@
     border-radius: 5px;
     cursor: pointer;
     margin: 0 auto;
+  }
+
+  .button1:hover{
+    background-color: #457B9D;
   }
   
   .card {

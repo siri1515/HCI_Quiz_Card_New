@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { useAppContext } from '../../context/AppContext';
+import styles from './AddNewButton.module.css';
 
 export default function AddNewButton(props){
     const [addState, setAddState] = useState(false);
@@ -52,20 +53,24 @@ export default function AddNewButton(props){
     return (
         <div>
             {addState ? (
-                <form onSubmit={submitHandler}>
-                    <div>
-                        <label>Please input the Question:</label>
-                        <input type="text" value={question} onChange={questionChangeHandler} />
+                <div className={styles.modal_background}>
+                    <div className={styles.popup_form}>
+                        <form className={styles.add_card_form} onSubmit={submitHandler}>
+                            <div>
+                                <label>Please input the Question:</label>
+                                <input type="text" value={question} onChange={questionChangeHandler} />
+                            </div>
+                            <div>
+                                <label>Please input the Answer:</label>
+                                <input type="text" value={answer} onChange={answerChangeHandler} />
+                            </div>
+                            <button type="submit">Add</button>
+                            <button onClick={cancelClickHandler}>Cancel</button>
+                        </form>
                     </div>
-                    <div>
-                        <label>Please input the Answer:</label>
-                        <input type="text" value={answer} onChange={answerChangeHandler} />
-                    </div>
-                    <button type="submit">Add</button>
-                    <button onClick={cancelClickHandler}>Cancel</button>
-                </form>
+                </div>
             ) : (
-                <button onClick={addClickHandler}>Add New Card</button>
+                <button className={styles.add_new_card_button} onClick={addClickHandler}>Add New Card</button>
             )}
         </div> 
     )

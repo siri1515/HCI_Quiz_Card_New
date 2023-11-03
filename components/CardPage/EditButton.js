@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAppContext } from '../../context/AppContext';
+import styles from './EditButton.module.css';
 
 export default function EditButton(props){
 
@@ -47,20 +48,24 @@ export default function EditButton(props){
     return(
         <div>
             {editState ? (
-                <form onSubmit={submitHandler}>
-                    <div>
-                        <label>New Question:</label>
-                        <input type="text" value={newQuestion} onChange={questionChangeHandler} />
+                <div className={styles.modal_background}>
+                    <div className={styles.popup_form}>
+                        <form className={styles.edit_card_form} onSubmit={submitHandler}>
+                            <div>
+                                <label>New Question:</label>
+                                <input type="text" value={newQuestion} onChange={questionChangeHandler} />
+                            </div>
+                            <div>
+                                <label>New Answer:</label>
+                                <input type="text" value={newAnswer} onChange={answerChangeHandler} />
+                            </div>
+                            <button type="submit">Save</button>
+                            <button onClick={cancelClickHandler}>Cancel</button>
+                        </form>
                     </div>
-                    <div>
-                        <label>New Answer:</label>
-                        <input type="text" value={newAnswer} onChange={answerChangeHandler} />
-                    </div>
-                    <button type="submit">Save</button>
-                    <button onClick={cancelClickHandler}>Cancel</button>
-                </form>
+                </div>
             ) : (
-                <button onClick={editClickHandler}>Edit</button>
+                <button className={styles.edit_card_button} onClick={editClickHandler}>Edit</button>
             )}
         </div>
     )
