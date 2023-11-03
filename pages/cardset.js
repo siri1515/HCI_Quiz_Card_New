@@ -12,7 +12,7 @@ export default function CardSetPage(){
     return(
         <div className={styles.body}>
             <NavBar />
-            <h1 className={styles.page_title}>Quiz Card Maker</h1> {/* Add the title */}
+            <h1 className={styles.page_title}>CardSet List</h1> {/* Add the title */}
             <AddNewCardSet />
             <div className={styles.card_set_page}>
                 {list.map((cardset) => {
