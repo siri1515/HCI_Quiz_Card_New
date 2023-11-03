@@ -3,13 +3,19 @@ import styles from './CardSetForm.module.css';
 
 export default function CardSetForm(props){
     const [newCardSetName, setNewCardSetName] = useState('');
+    const [isValid, setIsValid] = useState(true);
 
     function cardSetChangeHandler(event){
         setNewCardSetName(event.target.value);
+        setIsValid(true);
     }
 
     function submitHandler(event){
         event.preventDefault();
+        if (newCardSetName.trim() === '') {
+            setIsValid(false);
+            return;
+        }
         const cardSetData = {
             title: newCardSetName,
             cards: []
@@ -20,6 +26,8 @@ export default function CardSetForm(props){
 
     function cancelHandler(){
         props.onDeleteForm(true);
+        setIsValid(true);
+        setNewCardSetName('');
     }
 
     return(
@@ -30,6 +38,7 @@ export default function CardSetForm(props){
                     <div>
                         <label>Please input your new cardset name:</label>
                         <input type="text" value={newCardSetName} onChange={cardSetChangeHandler} />
+                        {!isValid && <div className={styles.error}>Please input valid text</div>} 
                     </div>
                     <div>
                         <button onClick={cancelHandler}><b>Cancel</b></button>

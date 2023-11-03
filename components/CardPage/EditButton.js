@@ -7,14 +7,17 @@ export default function EditButton(props){
     const [editState, setEditState] = useState(false);
     const [newQuestion, setNewQuestion] = useState('');
     const [newAnswer, setNewAnswer] = useState('');
+    const [isValid,setIsValid] = useState(true);
     const { list, setList, chosenSet, setChosenSet } = useAppContext();
 
     function questionChangeHandler(event){
         setNewQuestion(event.target.value);
+        setIsValid(true);
     }
 
     function answerChangeHandler(event){
         setNewAnswer(event.target.value);
+        setIsValid(true);
     }
 
     function editClickHandler(){
@@ -23,10 +26,17 @@ export default function EditButton(props){
 
     function cancelClickHandler(){
         setEditState(false);
+        setIsValid(true);
+        setNewQuestion('');
+        setNewAnswer('');
     }
 
     function submitHandler(event){
         event.preventDefault();
+        if (newQuestion.trim() === '' || newAnswer.trim() === '') {
+            setIsValid(false);
+            return;
+        }
         const newList = [...chosenSet.cards];
         newList[props.index].question = newQuestion;
         newList[props.index].answer = newAnswer;
@@ -59,6 +69,7 @@ export default function EditButton(props){
                                 <label>New Answer:</label>
                                 <input type="text" value={newAnswer} onChange={answerChangeHandler} />
                             </div>
+                            {!isValid && <div className={styles.error}>Please input valid text</div>} 
                             <button type="submit">Save</button>
                             <button onClick={cancelClickHandler}>Cancel</button>
                         </form>

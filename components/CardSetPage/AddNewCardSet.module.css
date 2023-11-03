@@ -31,7 +31,6 @@
     touch-action: manipulation;
 }
 
-.new_cardset_button:hover,
-.new_cardset_button:focus {
+.new_cardset_button:hover {
     background-color: #FB6F92;
 }

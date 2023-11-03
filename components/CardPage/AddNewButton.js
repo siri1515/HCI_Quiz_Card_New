@@ -6,18 +6,24 @@ export default function AddNewButton(props){
     const [addState, setAddState] = useState(false);
     const [question, setQuestion] = useState('');
     const [answer, setAnswer] = useState('');
+    const [isValid,setIsValid] = useState(true);
     const {list, setList, chosenSet, setChosenSet } = useAppContext();
 
     function questionChangeHandler(event){
         setQuestion(event.target.value);
+        setIsValid(true);
     }
 
     function answerChangeHandler(event){
         setAnswer(event.target.value);
+        setIsValid(true);
     }
 
     function cancelClickHandler(){
         setAddState(false);
+        setIsValid(true);
+        setQuestion('');
+        setAnswer('');
     }
 
     function addClickHandler(){
@@ -26,6 +32,10 @@ export default function AddNewButton(props){
 
     function submitHandler(event) {
         event.preventDefault();
+        if (question.trim() === '' || answer.trim() === '') {
+            setIsValid(false);
+            return;
+        }
         const newCard = {
             id: Math.random().toString(),
             question: question,
@@ -64,6 +74,7 @@ export default function AddNewButton(props){
                                 <label>Please input the Answer:</label>
                                 <input type="text" value={answer} onChange={answerChangeHandler} />
                             </div>
+                            {!isValid && <div className={styles.error}>Please input valid text</div>} 
                             <button type="submit">Add</button>
                             <button onClick={cancelClickHandler}>Cancel</button>
                         </form>
