@@ -92,3 +92,8 @@
 .cardset_form button.submit {
     background-color: #3498db;
 }
+
+.error{
+    color: red;
+    margin-bottom: 20px;
+}

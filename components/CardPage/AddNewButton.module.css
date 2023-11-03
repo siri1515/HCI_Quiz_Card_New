@@ -61,7 +61,7 @@
     z-index: 2;
     position: fixed;
     width: 40%;
-    height: 25%;
+    height: 26%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -106,4 +106,9 @@
 .add_card_form button:hover {
     background-color: #FFE3E3;
     border-color: #FAA4A4;
+}
+
+.error{
+    color: red;
+    margin-bottom: 3px;
 }

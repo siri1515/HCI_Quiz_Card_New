@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 20px;
   }
   .main h3 {
     font-size: 32px;
@@ -52,7 +52,7 @@
   .main input[type="submit"] {
     padding: 12px 0;
     color: #fff;
-    background-color: #FFB3C6;
+    background-color: #FF8FAB;
     border: none;
     border-radius: 4px;
     text-align: center;
@@ -61,6 +61,10 @@
   .main .result {
     font-weight: bold;
     margin-top: 40px;
+  }
+
+  .main input[type="submit"]:hover{
+    background-color: #FB6F92;
   }
 
 
@@ -87,5 +91,10 @@
   height: 300px;
   background: url('/waiting.gif') no-repeat center center;
   background-size: cover;
+}
+
+.error{
+  color: red;
+  margin-bottom: 3px;
 }
   
