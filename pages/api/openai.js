@@ -52,7 +52,6 @@ export default async function (req, res) {
 
     res.status(200).json({ result: questionsAndAnswers });
   } catch(error) {
-    alert('something wrong with chatgpt, please try again');
     if (error.response) {
       console.error(error.response.status, error.response.data);
       res.status(error.response.status).json(error.response.data);

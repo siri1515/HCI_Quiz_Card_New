@@ -4,7 +4,7 @@ Project ReadMe File:
     
     some notes:
     1. Please avoid refreshing the quizcard page directly. Since this project doesn't utilize a database, a direct refresh will re-implement the dummy array, which may cause errors.
-    2. The OpenAI API key may expire automatically. If you encounter issues with the API key or face any problems with the AI generator function, please contact me(Xirui Liu email: 158498l@acadiau.ca) and I will create a new api key.
+    2. The OpenAI API key is very likely expire automatically. If you encounter issues with the API key or face any problems with the AI generator function, please contact me(Xirui Liu email: 158498l@acadiau.ca) and I will create a new api key.
     
     Thank you!
 
