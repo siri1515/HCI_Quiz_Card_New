@@ -51,22 +51,26 @@ export default function CardBlock(props) {
         }
     }
 
-    function deleteHandler() {
-
-        const updatedList = list.map(set => {
-            if (set && set.id === chosenSet.id) {
-              return {
-                ...set,
-                cards: set.cards.filter((_, i) => i !== index),
-              };
-            }
-            return set;
-        });
-
-        const updatedChosenSet = updatedList.find(set => set.id === chosenSet.id);
-        setList(updatedList);
-        setChosenSet(updatedChosenSet)
-    }
+	function deleteHandler() {
+		const updatedList = list.map(set => {
+			if (set && set.id === chosenSet.id) {
+				return {
+					...set,
+					cards: set.cards.filter((_, i) => i !== index),
+				};
+			}
+			return set;
+		});
+	
+		const updatedChosenSet = updatedList.find(set => set.id === chosenSet.id);
+		setList(updatedList);
+		setChosenSet(updatedChosenSet);
+	
+		if (index >= updatedChosenSet.cards.length) {
+			setIndex(Math.max(updatedChosenSet.cards.length - 1, 0));
+		}
+	}
+	
 
     useEffect(() => {
         updateButtonStates();
@@ -85,21 +89,7 @@ export default function CardBlock(props) {
                         </div>
                     ) : ''
                 }
-                {/* <div className={`card ${isFlipping ? 'flipping' : ''}`} onClick={cardClickHandler}>
-                    {side ? props.list[index].question : props.list[index].answer}
-                </div> */}
 
-
-
-                {/* <div className={`${styles.card} ${!side ? styles.flipping : ''}`} onClick={cardClickHandler}>
-
-                    <div className={`${styles.card_content} ${styles.card_front}`}>
-                        {chosenSet.cards[index].question}
-                    </div>
-                    <div className={`${styles.card_content} ${styles.card_back}`}>
-                        {chosenSet.cards[index].answer}
-                    </div>
-                </div> */}
 
 
 
